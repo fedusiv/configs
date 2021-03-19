@@ -1,0 +1,3 @@
+[submodule "CurtineIncSw.vim"]
+	path = CurtineIncSw.vim
+	url = https://github.com/ericcurtin/CurtineIncSw.vim.git
