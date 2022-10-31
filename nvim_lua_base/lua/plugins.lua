@@ -54,8 +54,8 @@ return require('packer').startup(function(use)
 		'kyazdani42/nvim-tree.lua',
 		requires = {
 			'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  		},
-  		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+ 		},
+ 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
 	
 	-- Icons
@@ -80,9 +80,12 @@ return require('packer').startup(function(use)
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
 
+    --Indent lines and symbols
+    use "lukas-reineke/indent-blankline.nvim"
+
 	-- Colorschemes
-	use 'rmehri01/onenord.nvim'
-	use 'marko-cerovac/material.nvim'
+    use 'rmehri01/onenord.nvim'
+    use 'marko-cerovac/material.nvim'
 	use {
 		'shaunsingh/moonlight.nvim',
 		moonlight_italic_comments = false,
@@ -97,5 +100,7 @@ return require('packer').startup(function(use)
 	--if packer_bootstrap then
 	---	require('packer').sync()
 	--end
+    --:PackerInstall to install Packer
+    --:PackerUpdate
 
 end)
