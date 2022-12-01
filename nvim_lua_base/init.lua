@@ -41,6 +41,7 @@ map('n', '<S-l>', '$') -- Move cursor to the end of line
 map('n', '<S-h>', '^') -- Move cursor to the start of line
 map('n', '<A-j>', ':m .+1<CR>==') -- Move whole line down
 map('n', '<A-k>', ':m-2<CR>==') -- Move whole line up above
+map('i', 'jj', '<Esc>') -- Escape from insert mode
 
 
 -- Telescope control
