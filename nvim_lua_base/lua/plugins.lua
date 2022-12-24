@@ -80,6 +80,11 @@ return require('packer').startup(function(use)
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
 
+    -- nvim vscode like
+    use {
+        'ldelossa/nvim-ide'
+    }
+
     --Indent lines and symbols
     use "lukas-reineke/indent-blankline.nvim"
 
@@ -93,6 +98,7 @@ return require('packer').startup(function(use)
 		moonlight_italic_functions = false,
 		moonlight_italic_variables = false,
 	}
+    use "lewpoly/sherbet.nvim"
 
 	
 

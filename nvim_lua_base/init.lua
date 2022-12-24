@@ -17,8 +17,8 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
 --vim.cmd("hi CursorLineNr guifg=#e3dd71")
 
-vim.g.material_style = "deep ocean"
-vim.cmd('colorscheme material')
+--vim.g.material_style = "deep ocean"
+vim.cmd('colorscheme sherbet')
 
 -- Mouse support
 vim.opt.mouse = 'a'
@@ -58,11 +58,26 @@ require'nvim-web-devicons'.setup {
 
 -- File explorer (Tree settings)
 require("nvim-tree").setup{
+    sort_by = "case_sensitive",
     update_focused_file = {
         update_root = true,
-    }
+    },
+    view = {
+        mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
 }
 map('n', '<leader>te', ':NvimTreeFindFileToggle<cr>')
+map('n', '<leader>tf', ':NvimTreeFocus<cr>')
 
 -- Status line
 require'lualine'.setup()
@@ -94,3 +109,4 @@ require'indent_blankline'.setup{
     show_end_of_line = true,
     space_char_blankline = " "
 }
+
