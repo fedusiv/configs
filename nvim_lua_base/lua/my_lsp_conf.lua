@@ -1,3 +1,7 @@
+-- Key remapping
+local function map(m, k ,v)
+    vim.keymap.set(m,k,v, {silent=true})
+end
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -50,3 +54,21 @@ for _, lsp in ipairs(servers) do
 end
 
 vim.cmd('COQnow -s')
+
+-- Outline part
+require("symbols-outline").setup()
+map('n', 'so', ':SymbolsOutline<cr>')
+
+--Diagnostics part
+map('n', '<leader>tt', ':TroubleToggle<cr>') 
+local signs = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " "
+}
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
+

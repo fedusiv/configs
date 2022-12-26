@@ -41,6 +41,21 @@ return require('packer').startup(function(use)
 		'ms-jpq/coq_nvim',
 		branch = 'coq'
 	}
+    -- LSP diagnostics
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+        require("trouble").setup {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+        end
+    }
+
+    -- Outline, shows info about functions, methods, etc
+    use 'simrat39/symbols-outline.nvim'
 
 	-- Finder, searcher, fuzzy-finder
 	use {
@@ -79,11 +94,6 @@ return require('packer').startup(function(use)
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
-
-    -- nvim vscode like
-    use {
-        'ldelossa/nvim-ide'
-    }
 
     --Indent lines and symbols
     use "lukas-reineke/indent-blankline.nvim"
