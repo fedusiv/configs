@@ -34,6 +34,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>bf', vim.lsp.buf.formatting, bufopts)
 end
 
+map('n', '<space>h', ':ClangdSwitchSourceHeader<cr>')
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
